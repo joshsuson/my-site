@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --shadow-brutal: 3px 5px 0 var(--color-zinc-950);
+}
+
+@utility brutal-hover {
+  @apply translate-x-[5px] translate-y-[3px] shadow-none;
+}
+
+@utility shadow-brutal-hover {
+  @apply shadow-brutal hover:brutal-hover transition-all ease-in;
+}
+
+@utility active {
+  @apply translate-x-[5px] translate-y-[3px] shadow-none;
+}
+
+/* FOR SANITY DASHBOARD */
+#app {
+  height: 100vh;
+  max-height: 100dvh;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  overflow: auto;
+}
