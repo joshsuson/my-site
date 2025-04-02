@@ -5,7 +5,7 @@ import type { ComponentType } from "react";
 
 interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   text: string;
-  color: string;
+  color?: string;
   icon?: ComponentType<{ className: string }>;
 }
 
@@ -16,7 +16,7 @@ const BasicLinkComponent = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
       <a
         ref={ref}
         {...rest}
-        className={`flex gap-1 items-center uppercase tracking-wide text-lg ${color}`}
+        className={`flex gap-2 items-center uppercase tracking-wide text-lg ${color}`}
       >
         {Icon && (
           <span>
@@ -26,7 +26,7 @@ const BasicLinkComponent = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
         {text}
       </a>
     );
-  }
+  },
 );
 
 BasicLinkComponent.displayName = "BasicLinkComponent";

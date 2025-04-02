@@ -8,7 +8,7 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ title = "Suson.Codes", children }) => {
   return (
-    <main className="flex min-h-screen flex-col bg-zinc-50 font-sans">
+    <main className="flex min-h-screen flex-col bg-zinc-900 font-sans">
       <Header title={title} />
       {children}
     </main>

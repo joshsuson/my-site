@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 
 const Pages = {
   home: "/",
+  about: "/about",
 };
 
 type Pages = (typeof Pages)[keyof typeof Pages];
@@ -18,14 +19,23 @@ export const Route = createRootRoute({
       case Pages.home:
         title = "🏠 Home | Suson.Codes";
         break;
+      case Pages.about:
+        title = "👤 About | Suson.Codes";
+        break;
       default:
+        if (pathname.startsWith("/studio")) {
+          title = "Studio";
+        }
         title = "Suson.Codes";
     }
     return (
       <>
-        <Layout title={title}>
-          <Outlet />
-        </Layout>
+        {!pathname.startsWith("/studio") && (
+          <Layout title={title}>
+            <Outlet />
+          </Layout>
+        )}
+        {pathname.startsWith("/studio") && <Outlet />}
         <ReactQueryDevtools buttonPosition="bottom-right" />
         <TanStackRouterDevtools />
       </>
