@@ -33,10 +33,16 @@ function App() {
         <h1 className="text-5xl font-bold">{homePage?.headline}</h1>
         <h2 className="text-3xl pt-4">{homePage?.slugline}</h2>
       </div>
-      <div className="flex justify-center pt-16">
-        <Link to={"/about"} className="flex text-lg">
+      <div className="flex gap-10 justify-center pt-16">
+        <Link to={"/blog"} className="group flex items-center text-lg">
+          Read My Blog{" "}
+          <span className="rotate-180 group-hover:translate-x-1 transiton-all ease-in-out">
+            <LeftArrow className="size-6" />
+          </span>
+        </Link>
+        <Link to={"/about"} className="group flex items-center text-lg">
           Read More About Me{" "}
-          <span className="rotate-180 ">
+          <span className="rotate-180 group-hover:translate-x-1 transiton-all ease-in-out">
             <LeftArrow className="size-6" />
           </span>
         </Link>

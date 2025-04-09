@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { Home, User } from "../icons";
+import { Home, User, Paper } from "../icons";
 import { NavLink } from "./NavLink";
 import { useLocation } from "@tanstack/react-router";
 import classNames from "classnames";
@@ -24,6 +24,11 @@ const navigation: NavigationLink[] = [
     url: "/about",
     text: "About",
     icon: User,
+  },
+  {
+    url: "/blog",
+    text: "Blog",
+    icon: Paper,
   },
 ];
 
